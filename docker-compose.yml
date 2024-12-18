@@ -19,7 +19,10 @@ services:
 
   grafana:
     container_name: grafana
-    image: grafana/grafana:11.4.0
+    #image: grafana/grafana:11.4.0
+    build: 
+      context: ./grafana
+      dockerfile: Dockerfile
     volumes:
       - chkp-skyline-grafana:/var/lib/grafana/
     depends_on:
